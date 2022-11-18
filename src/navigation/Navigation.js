@@ -6,9 +6,8 @@ import RegisterScreen from '../screens/RegisterScreen';
 
 const Stack = createNativeStackNavigator();
 
-
-
 export default function Navigation() {
+
     return (
         <Stack.Navigator>
             <Stack.Screen name='RegisterScreen' component={RegisterScreen} />
