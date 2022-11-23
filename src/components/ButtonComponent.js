@@ -1,12 +1,16 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native';
 
-export default function BottonComponent(props) {
-    const { styleType, text, goTo } = props
+export default function ButtonComponent({ styleType, text, goTo, auth }) {
+    // "auth" se usa para botones de validacion de formularios y "goTo" para navegacio
+    const navigation = useNavigation();
     return (
-        <Pressable style={styles[styleType]} >
+        <Pressable onPress={auth?.handleSubmit || (() => navigation.navigate(goTo))
+        }
+            style={styles[styleType]} >
             <Text style={styles[`${styleType}_text`]}>{text}</Text>
-        </Pressable>
+        </Pressable >
     )
 }
 
@@ -16,20 +20,19 @@ const styles = StyleSheet.create({
         backgroundColor: "#9CD919",
         width: 164,
         maxHeight: 50,
+        height: 50,
         borderRadius: 41,
         justifyContent: 'center',
         alignItems: 'center',
-        // paddingVertical: 10,
-        // paddingHorizontal: 30,
+        marginBottom: 20,
     },
     btnPrincipal_text: {
         color: "#fff",
         fontWeight: "bold",
         fontSize: 17,
+        backgroundColor: "transparent"
     },
     btnSecndary: {
-        // borderColor: "black",
-        // borderWidth: 1,
         padding: 5
     },
     btnSecndary_text: {

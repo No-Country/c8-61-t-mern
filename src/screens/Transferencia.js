@@ -2,6 +2,8 @@ import React from "react";
 import {StyleSheet, View, Text, TextInput, Button, Keyboard} from "react-native"
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Constants from 'expo-constants'
+import ButtonComponent from "../components/ButtonComponent";
+import TitleComponent from "../components/TitleComponent";
 
 export default function Transferencia() {
  
@@ -29,13 +31,13 @@ export default function Transferencia() {
                     autoCapitalize="none"
                     //deberia ser un input que te lleve al listado ya cargado de cbu?
                 />
-                <BottonComponent styleType={"btnSecndary"} text="Ingresar nuevo CBU" />
+                <ButtonComponent styleType={"btnSecndary"} text="Ingresar nuevo CBU" />
                 <TextInput
                     placeholder="Monto"
                     style={styles.input}
                     autoCapitalize="none"
                 />
-                <BottonComponent styleType={"btnPrincipal"} text="Transferir" />
+                <ButtonComponent styleType={"btnPrincipal"} text="Transferir" />
             </View>
         </SafeAreaView>
   )

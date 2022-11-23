@@ -1,13 +1,16 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
+import Constants from 'expo-constants'
 
-export default function MainScreen({ navigation }) {
+export default function AuthScreen() {
+    const navigation = useNavigation()
     return (
         <View style={{
             flex: 1,
             justifyContent: 'center',
             alignItems: 'center',
-            paddingVertical: 30
+            marginTop: Constants.statusBarHeight
         }} >
             <Text style={{
                 fontSize: 30
