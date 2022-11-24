@@ -23,6 +23,6 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         paddingTop: Constants.statusBarHeight,
-        paddingHorizontal: "10%",
+        paddingHorizontal: "5%",
     },
 })

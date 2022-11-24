@@ -9,9 +9,10 @@ export default function IsLoginNavigation() {
     return (
         <>
             {
-                !auth ?
-                    <AuthNavigation />
-                    :
+                // omitimos el inicio de sesión temporalmente
+                // !auth ?
+                //     <AuthNavigation />
+                //     :
                     <UserNavigation />
             }
 

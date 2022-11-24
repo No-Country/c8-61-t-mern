@@ -7,52 +7,62 @@ export default function useValidationForms() {
 
     const questionsRegister = [
         {
-            text: "email",
+            text: "Email",
             type: "email"
         },
         {
-            text: "nombre",
+            text: "Nombre",
             type: "firstName"
         },
         {
-            text: "apellido",
+            text: "Apellido",
             type: "lastName"
         },
         {
-            text: "edad",
-            type: "age"
-        },
-        {
-            text: "fecha de nacimiento",
+            text: "Fecha de nacimiento",
             type: "dateBirth"
         },
         {
-            text: "contraseña",
+            text: "Edad",
+            type: "age"
+        },
+        {
+            text: "Contraseña",
             type: "password"
         }
     ]
     const questionsLogin = [
         {
-            text: "email",
+            text: "Email",
             type: "email"
         },
         {
-            text: "contraseña",
+            text: "Contraseña",
             type: "password"
         }
     ]
-    const validationSchema = () => {
+    const validationSchemaRegister = () => {
         return {
             email: Yup.string().required('El email es obligatorio.').email("Es necesario un email valido"),
-            password: Yup.string().required("La contraseña es obligatoria")
+            password: Yup.string().required("La contraseña es obligatoria"),
+            firstName: Yup.string().required("El nombre es obligatorio"),
+            lastName: Yup.string().required("El apellido es obligatorio"),
+            age: Yup.string().required("la edad es obligatoria"),
+            dateBirth: Yup.string().required("La fecha de nacimiento es obligatoria"),
+
         }
     }
-
+    const validationSchemaLogin = () => {
+        return {
+            email: Yup.string().required('El email es obligatorio.').email("Es necesario un email valido"),
+            password: Yup.string().required("La contraseña es obligatoria"),
+        }
+    }
     const authLogin = useFormik({
         initialValues: {
             ...questionsLogin.type,
         },
-        validationSchema: Yup.object(validationSchema()),
+        validationSchema: Yup.object(validationSchemaLogin()),
         validateOnChange: false,
         onSubmit: (userData) => {
             login(userData)
@@ -62,10 +72,11 @@ export default function useValidationForms() {
         initialValues: {
             ...questionsRegister.type
         },
-        validationSchema: Yup.object(validationSchema()),
+        validationSchema: Yup.object(validationSchemaRegister()),
         validateOnChange: false,
         onSubmit: (userData) => {
-            login(userData)
+            // login(userData)
+            console.log(userData);
         }
     })
 

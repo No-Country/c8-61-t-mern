@@ -13,7 +13,7 @@ export default function LoginScreen() {
             <View style={styles.screenContainer}>
                 <View style={styles.topBg} />
                 <View style={styles.topCircle} />
-                <TitleComponent text="Iniciar sesíon" />
+                <TitleComponent text="Iniciar sesión" />
                 <FormLogin />
             </View >
         </KeyboardAwareScrollView>

@@ -11,7 +11,8 @@ export default function FormLogin() {
         questionsLogin,
         authLogin,
     } = useValidationForms()
-    const errorMessages = Object.entries(authLogin.errors)
+    const errorMessages = Object.entries(authLogin?.errors)
+    console.log(errorMessages);
     return (
         <View style={styles.componentContainer}>
             <View style={styles.formContainer} >
@@ -23,16 +24,11 @@ export default function FormLogin() {
                         index={index}
                         inputRef={inputRef}
                         auth={authLogin}
+                        errorMessage={errorMessages.map((typeError) => { return question.type === typeError[0] && typeError[1] }
+                        )}
                     />
                 )}
             </View>
-            <View style={styles.errorMessage_container} >
-                {errorMessages.map((typeError) =>
-                    <Text key={typeError[0]} style={styles.errorMessage_text} >
-                        {typeError[1]}
-                    </Text>
-                )}
-            </View >
 
             <View style={styles.btnsContainer}>
                 <ButtonComponent
