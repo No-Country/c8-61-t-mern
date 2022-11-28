@@ -12,7 +12,6 @@ export default function HomeScreen() {
             <Text style={styles.screenContainer_title}>HomeScreen</Text>
             <View style={styles.screenContainer_content}>
                 <Text>{auth.email}</Text>
-                <ButtonComponent styleType="btnPrincipal" goTo="Transferencia" text="Transferencia" />
             </View>
         </View>
     )

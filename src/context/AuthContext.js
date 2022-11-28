@@ -5,7 +5,7 @@ export const AuthContext = createContext();
 export function AuthProvider(props) {
     const { children } = props;
     // para habilitar el login, cambiar auth de "true" a "undefined"
-    const [auth, setAuth] = useState(true);
+    const [auth, setAuth] = useState(undefined);
     // const [createccount, setCreateAccount] = useState(undefined);
 
     const login = (userData) => {
