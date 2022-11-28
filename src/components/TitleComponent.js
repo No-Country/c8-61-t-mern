@@ -5,9 +5,10 @@ export default function TitleComponent({ text }) {
     return (
         <Text style={{
             fontSize: 24,
-            margin: 20,
+            marginVertical: 20,
             color: "#52A62D",
-            fontWeight: "bold"
+            fontWeight: "700",
+            lineHeight:26
         }} >{text}</Text>
     )
 }

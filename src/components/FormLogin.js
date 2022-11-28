@@ -12,7 +12,6 @@ export default function FormLogin() {
         authLogin,
     } = useValidationForms()
     const errorMessages = Object.entries(authLogin?.errors)
-    console.log(errorMessages);
     return (
         <View style={styles.componentContainer}>
             <View style={styles.formContainer} >
@@ -33,10 +32,13 @@ export default function FormLogin() {
             <View style={styles.btnsContainer}>
                 <ButtonComponent
                     styleType={"btnPrincipal"}
-                    text="Iniciar sesíon" auth={authLogin} />
+                    text="Iniciar sesión" auth={authLogin} />
                 <ButtonComponent
                     styleType={"btnSecndary"}
                     text="¿No tienes cuenta?" goTo="RegisterScreen" />
+                <ButtonComponent
+                    styleType={"btnSecndary"}
+                    text="¿Olvidaste tu contraseña?" goTo="RecoverPasswordScreen" />
             </View>
 
         </View >

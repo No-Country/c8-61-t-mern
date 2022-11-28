@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text } from 'react-native'
+import { TouchableOpacity, StyleSheet, Text } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 
@@ -6,31 +6,49 @@ export default function ButtonComponent({ styleType, text, goTo, auth }) {
     // "auth" se usa para botones de validacion de formularios y "goTo" para navegacio
     const navigation = useNavigation();
     return (
-        <Pressable onPress={auth?.handleSubmit || (() => navigation.navigate(goTo))
+        <TouchableOpacity onPress={auth?.handleSubmit || (() => navigation.navigate(goTo))
         }
             style={styles[styleType]} >
             <Text style={styles[`${styleType}_text`]}>{text}</Text>
-        </Pressable >
+        </TouchableOpacity >
     )
 }
 
 const styles = StyleSheet.create({
     btnPrincipal: {
-        flex: 1,
-        backgroundColor: "#9CD919",
-        width: 164,
-        maxHeight: 50,
-        height: 50,
-        borderRadius: 41,
-        justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: "#9CD919",
+        borderRadius: 41,
+        flex: 1,
+        minHeight: 50,
+        justifyContent: 'center',
         marginBottom: 20,
+        maxHeight: 50,
+        width: 164,
+    },
+    btnPrincipalBlue: {
+        alignItems: 'center',
+        backgroundColor: "#5CB9F2",
+        borderRadius: 41,
+        flex: 1,
+        height: 50,
+        minHeight: 50,
+        justifyContent: 'center',
+        marginBottom: 20,
+        maxHeight: 50,
+        width: 164,
     },
     btnPrincipal_text: {
+        backgroundColor: "transparent",
         color: "#fff",
-        fontWeight: "bold",
         fontSize: 17,
-        backgroundColor: "transparent"
+        fontWeight: "bold",
+    },
+    btnPrincipalBlue_text: {
+        backgroundColor: "transparent",
+        color: "#fff",
+        fontSize: 17,
+        fontWeight: "bold",
     },
     btnSecndary: {
         padding: 5

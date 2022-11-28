@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
-import { Input } from 'react-native-elements'
-
+import { Input, Text } from 'react-native-elements'
+import { mask, MaskedTextInput } from "react-native-mask-text";
 export default function FormComponent({ text, type, inputRef, index, auth, errorMessage }) {
     const [openKeyboard, setOpenKeyboard] = React.useState(false)
     const [returnKeyTypeChange, setReturnKeyTypeChange] = React.useState("next")
@@ -27,7 +27,7 @@ export default function FormComponent({ text, type, inputRef, index, auth, error
         if (typeMidScreen.includes(type)) {
             ref.current.setNativeProps({
                 style: {
-                    width: '50%'
+                    width: "50%",
                 }
             })
         }
@@ -35,80 +35,77 @@ export default function FormComponent({ text, type, inputRef, index, auth, error
 
     return (
         <View ref={ref} style={styles.input_container} >
-            <Input
-                label={text}
-                errorMessage={errorMessage ? errorMessage : false}
-                errorStyle={styles.input_error}
-                labelStyle={styles.input_label}
-                secureTextEntry={type === "password" ?? true}
-                onFocus={isFocus}
-                ref={(el) => (inputRef.current[index] = el)}
-                returnKeyType={returnKeyTypeChange}
-                blurOnSubmit={openKeyboard}
-                onSubmitEditing={nextInput}
-                value={auth?.values.type}
-                onChangeText={(textInput) => {
-                    auth?.setFieldValue(type, textInput)
-                }}
-                autoCapitalize='none'
-                style={styles.input}
-                placeholder={text}
-                keyboardType={typeNumber.includes(type) ? "number-pad" : "default"}
-            />
+            {type === "dateBirth" || type === "age" ?
+                <View style={{
+                    marginHorizontal: 10,
+                }}>
+                    <Text style={styles.input_label} >{text}</Text>
+                    <MaskedTextInput
+                        mask={
+                            type === "dateBirth" && "99/99/9999" ||
+                            type === "age" && "99"
+                        }
+                        secureTextEntry={type === "password" ?? true}
+                        onFocus={isFocus}
+                        ref={(el) => (inputRef.current[index] = el)}
+                        returnKeyType={returnKeyTypeChange}
+                        blurOnSubmit={openKeyboard}
+                        onSubmitEditing={nextInput}
+                        value={auth?.values.type}
+                        autoCapitalize='none'
+                        style={styles.input}
+                        placeholder={text}
+                        keyboardType={typeNumber.includes(type) ? "number-pad" : "default"}
+                        onChangeText={(text) => {
+                            auth?.setFieldValue(type, text)
+                        }}
+                    />
+                </View>
+                :
+                <Input
+                    label={text}
+                    errorMessage={errorMessage ? errorMessage : false}
+                    errorStyle={styles.input_error}
+                    inputContainerStyle={{ borderBottomWidth: 0 }}
+                    labelStyle={styles.input_label}
+                    secureTextEntry={type === "password" ?? true}
+                    onFocus={isFocus}
+                    ref={(el) => (inputRef.current[index] = el)}
+                    returnKeyType={returnKeyTypeChange}
+                    blurOnSubmit={openKeyboard}
+                    onSubmitEditing={nextInput}
+                    value={auth?.values.type}
+                    onChangeText={(text) => {
+                        auth?.setFieldValue(type, text)
+                    }}
+                    autoCapitalize='none'
+                    style={styles.input}
+                    placeholder={text}
+                    keyboardType={typeNumber.includes(type) ? "number-pad" : "default"}
+                />
+            }
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     input_container: {
+        display: "flex",
         width: "100%",
         height: 100,
     },
     input_label: {
         color: "#52A62D",
         fontSize: 17,
-        fontWeight: "bold"
+        fontWeight: "bold",
     },
     input: {
+        borderBottomWidth: 1,
         fontSize: 17,
-        paddingVertical: 7,
-
+        paddingVertical: 5,
     },
     input_error: {
         color: "red",
         fontSize: 12
     },
 })
-/*
-{type === "dateBirth" ?
-                <View style={styles.input_date} >
-                    <Text style={styles.input_label}>
-                        {text}
-                    </Text>
-                    <TextInputMask
-                        onFocus={isFocus}
-                        ref={(el) => (inputRef.current[index] = el)}
-                        onSubmitEditing={nextInput}
-                        returnKeyType={returnKeyTypeChange}
-                        blurOnSubmit={openKeyboard}
-                        style={{
-                            // paddingBottom: 5,
-                            borderBottomWidth: 1,
-                            borderBottomColor: "gray",
-                            ...styles.input
-                        }}
-                        placeholder='DD/MM/AAAA'
-                        keyboardType="number-pad"
-                        type={'datetime'}
-                        options={{
-                            format: 'DD/MM/YYYY'
-                        }}
-                        value={auth?.values.type}
-                        onChangeText={(textInput) => {
-                            auth?.setFieldValue(type, textInput)
-                        }}
-                    />
-                    {errorMessage && <Text style={styles.input_error}>{errorMessage}</Text>}
-                </View>
-                :
-*/

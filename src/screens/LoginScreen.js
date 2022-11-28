@@ -1,7 +1,7 @@
 import React from 'react'
 import Constants from 'expo-constants'
 import TitleComponent from '../components/TitleComponent'
-import { StyleSheet, View, Dimensions } from 'react-native'
+import { StyleSheet, View, Dimensions, Image } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import FormLogin from '../components/FormLogin'
 
@@ -12,7 +12,12 @@ export default function LoginScreen() {
         <KeyboardAwareScrollView style={{ flex: 1 }} >
             <View style={styles.screenContainer}>
                 <View style={styles.topBg} />
-                <View style={styles.topCircle} />
+                <View style={styles.topCircle} >
+                    <Image
+                        source={require("../assets/Login-2-Imagen.png")}
+                        style={{}}
+                    />
+                </View>
                 <TitleComponent text="Iniciar sesión" />
                 <FormLogin />
             </View >
@@ -30,12 +35,14 @@ const styles = StyleSheet.create({
     },
     topBg: {
         position: "absolute",
-        top: 0,
         backgroundColor: "#EBF3CE",
-        height: 100,
+        height: Dimensions.get("window").height / 5,
         width: Dimensions.get("window").width,
     },
     topCircle: {
+        flex: 1,
+        justifyContent: "flex-end",
+        alignItems: "center",
         backgroundColor: "#D4F194",
         borderRadius: 500,
         height: Dimensions.get("window").width / 1.5,

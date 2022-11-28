@@ -42,15 +42,11 @@ const styles = StyleSheet.create({
     componentContainer: {
         flex: 1,
         width: "100%",
-        marginTop: 40,
     },
     formContainer: {
         display: "flex",
         flexDirection: "row",
         flexWrap: "wrap",
-        // flex: 1,
-        justifyContent: "space-between",
-        // height: "auto",
     },
     btnsContainer: {
         flex: 1,
