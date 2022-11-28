@@ -54,7 +54,7 @@ export default function InitialScreen() {
                 animatedStyleTiming,
             ]}>
                 <Image
-                    source={require("../assets/Inicio1-Imagen.png")}
+                    source={require("../../assets/images/Inicio1-Imagen.png")}
                     style={styles.img}
                 />
             </Animated.View>
