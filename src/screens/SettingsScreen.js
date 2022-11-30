@@ -1,9 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Dimensions } from 'react-native'
 import React from 'react'
 import { Image } from 'react-native-elements'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { useNavigation } from '@react-navigation/native'
 
 export default function SettingsScreen() {
+    const navigation = useNavigation()
     return (
 
         <KeyboardAwareScrollView style={{ flex: 1 }} >

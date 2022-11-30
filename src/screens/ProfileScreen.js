@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
 import Constants from 'expo-constants'
 import React from 'react'
+import { Image } from 'react-native-elements'
 
 export default function ProfileScreen() {
   return (
     <View style={styles.screenContainer}>
-      <Text style={styles.screenContainer_title}>ProfileScreen</Text>
+      
       <View style={styles.screenContainer_content}>
       </View>
     </View>

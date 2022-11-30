@@ -8,7 +8,6 @@ import FormLogin from '../components/FormLogin'
 export default function LoginScreen() {
 
     return (
-
         <KeyboardAwareScrollView style={{ flex: 1 }} >
             <View style={styles.screenContainer}>
                 <View style={styles.topBg} />
