@@ -11,6 +11,7 @@
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.4.3",
     "@react-navigation/native": "^6.0.13",
+<<<<<<< HEAD
     "@react-navigation/native-stack": "^6.9.4",
     "expo": "^47.0.8",
     "expo-constants": "~14.0.2",
@@ -20,12 +21,25 @@
     "npm": "^9.1.2",
     "react": "^18.2.0",
     "react-native": "^0.70.6",
+=======
+    "@react-navigation/native-stack": "^6.9.1",
+    "expo": "^46.0.0",
+    "expo-constants": "~13.2.4",
+    "expo-status-bar": "~1.4.2",
+    "formik": "^2.2.9",
+    "react-native": "^0.69.6",
+>>>>>>> a51a009a7e4baee5fccb4e5943f01659ca61ac03
     "react-native-appearance": "^0.3.4",
     "react-native-elements": "^3.4.2",
     "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-mask-text": "^0.13.1",
+<<<<<<< HEAD
     "react-native-safe-area-context": "^4.4.1",
     "react-native-screens": "~3.18.0",
+=======
+    "react-native-masked-text": "^1.13.0",
+    "react-native-screens": "~3.15.0",
+>>>>>>> a51a009a7e4baee5fccb4e5943f01659ca61ac03
     "react-native-vector-icons": "^9.2.0",
     "yup": "^0.32.11"
   },

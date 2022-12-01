@@ -9,31 +9,47 @@ import ChartScreen from '../screens/ChartScreen';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 import { useNavigation } from '@react-navigation/native'
+<<<<<<< HEAD
 import TransferNavigation from './TransferNavegation';
 
+=======
+import ProfileNavigation from './ProfileNavigation';
+import HomeNavegation from './HomeNavegation';
+>>>>>>> a51a009a7e4baee5fccb4e5943f01659ca61ac03
 export default function UserNavigation() {
     // si el usuario ya inicio sesion se mostrara esta navegacion
     const navigation = useNavigation()
 
     return (
-        <Tab.Navigator screenOptions={{
-            tabBarActiveTintColor: "#52A62D",
-            tabBarInactiveTintColor: "#9CD919",
-            tabBarActiveBackgroundColor: "#D4F194",
-        }}>
-            <Tab.Screen name='HomeScreen' component={HomeScreen} options={{
-            headerShown: false,
-            tabBarLabel: "Inicio",
-            tabBarIcon: ({ color, size }) => (
-                <Icon name="home" color={color} size={size} />
+        <Tab.Navigator
+
+            screenOptions={{
+                tabBarActiveTintColor: "#52A62D",
+                tabBarInactiveTintColor: "#9CD919",
+                tabBarActiveBackgroundColor: "#D4F194",
+
+            }}>
+            <Tab.Screen name='HomeNavegation' component={HomeNavegation} options={{
+                headerShown: false,
+                tabBarLabel: "Inicio",
+                tabBarIcon: ({ color, size }) => (
+                    <Icon name="home" color={color} size={size} />
                 )
             }}
             />
+<<<<<<< HEAD
             <Tab.Screen name='Transferencia' component={TransferNavigation} options={{
             headerShown: false,
             tabBarLabel: "Operaciones",
             tabBarIcon: ({ color, size }) => (
                 <Icon name="dollar-sign" color={color} size={size} />
+=======
+            <Tab.Screen name='Transferencia' component={Transferencia} options={{
+                headerShown: false,
+                tabBarLabel: "Operaciones",
+                tabBarIcon: ({ color, size }) => (
+                    <Icon name="dollar-sign" color={color} size={size} />
+>>>>>>> a51a009a7e4baee5fccb4e5943f01659ca61ac03
                 )
             }}
             />
@@ -44,17 +60,16 @@ export default function UserNavigation() {
                 tabBarLabel: "Movimientos",
                 tabBarIcon: ({ color, size }) => (
                     <Icon name="chart-line" color={color} size={size} />
-                    )
-                }} />
-            <Tab.Screen name='ProfileScreen' component={ProfileScreen} options={{
-                headerRight: ({ color, size }) => (
-                    <Icon name="cog" color={color} size={30} onPress={() => navigation.navigate("SettingsScreen")} />
-                ),
-                tabBarLabel: "Perfil",
-                tabBarIcon: ({ color, size }) => (
-                    <Icon name="user" color={color} size={size} />
                 )
-            }}
+            }} />
+            <Tab.Screen
+                name='ProfileNavigation' component={ProfileNavigation} options={{
+                    headerShown: false,
+                    tabBarLabel: "Perfil",
+                    tabBarIcon: ({ color, size }) => (
+                        <Icon name="user" color={color} size={size} />
+                    ),
+                }}
             />
         </Tab.Navigator>
     )
