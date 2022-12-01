@@ -16,11 +16,6 @@ export default function Transferencia() {
     )
 }
 const styles = StyleSheet.create({
-    screenContainer: {
-        flex: 1,
-        alignItems: "center",
-        marginTop: Constants.statusBarHeight
-    },
     screenContainer_title: {
         fontSize: 30
     },
