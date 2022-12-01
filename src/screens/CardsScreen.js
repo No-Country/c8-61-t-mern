@@ -4,10 +4,15 @@ import Constants from 'expo-constants'
 import { TextMask } from 'react-native-masked-text'
 import useAuth from '../hooks/useAuth'
 import ButtonComponent from '../components/ButtonComponent'
+import CardComponent from '../components/CardComponent'
 
 export default function CardsScreen() {
     const { auth } = useAuth()
+    const visa = "#3295D1"
 
+    const mastercard = "#FF603D"
+
+    //  "#81600D"
     return (
         <View style={styles.screenContainer}>
             <View style={styles.headerContainer}>
@@ -27,24 +32,17 @@ export default function CardsScreen() {
             </View>
             <View style={styles.cardsContainer}>
                 <Text style={{ ...styles.cardsTitle }}> Mis Cards</Text>
-                <View style={styles.cardItem} >
-                    <TextMask style={styles.cardNumber}
-                        value={"4567123409871234"}
-                        type={'credit-card'}
-                        options={{
-                            issuer: 'visa-or-mastercard',
-                            obfuscated: true
-                        }} />
-                </View>
-                <View style={{ ...styles.cardItem, backgroundColor: "#3295D1" }} >
-                    <TextMask style={styles.cardNumber}
-                        value={"4567123409871234"}
-                        type={'credit-card'}
-                        options={{
-                            issuer: 'visa-or-mastercard',
-                            obfuscated: true
-                        }} />
-                </View>
+                {auth.cards.map(({ type, number }, index) =>
+                    <View key={index} style={{ ...styles.cardItem, backgroundColor: type === "visa" ? "#3295D1": "#FF603D" }} >
+                        <TextMask style={styles.cardNumber}
+                            value={number}
+                            type={'credit-card'}
+                            options={{
+                                issuer: 'visa-or-mastercard',
+                                obfuscated: true
+                            }} />
+                    </View>
+                )}
             </View>
             <View style={styles.btnsContainer} >
                 <ButtonComponent styleType={"btnPrincipal"} text="Añadir targeta" />
@@ -56,7 +54,7 @@ export default function CardsScreen() {
 
 const styles = StyleSheet.create({
     screenContainer: {
-        backgroundColor: "#FFFFFF", 
+        backgroundColor: "#FFFFFF",
         alignItems: "center",
         paddingBottom: "20%",
         paddingTop: Constants.statusBarHeight,
@@ -95,7 +93,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         // borderWidth:1,
         // alignItems:"",
-        
+
     },
     cardsTitle: {
         color: "#52A62D",
@@ -106,7 +104,6 @@ const styles = StyleSheet.create({
     cardItem: {
         // position: "absolute",
         // top: "30%",
-        backgroundColor: "#FF603D",
         borderRadius: 8,
         width: 258,
         height: 68,
@@ -114,7 +111,7 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         // zIndex: 1,
         paddingBottom: 10,
-        marginVertical:10,
+        marginVertical: 10,
     },
     cardNumber: {
         color: "#FFFFFF",
@@ -122,9 +119,9 @@ const styles = StyleSheet.create({
         fontWeight: "400",
         letterSpacing: 4
     },
-    btnsContainer:{
+    btnsContainer: {
         // flex:1,
-        alignItems:"center",
+        alignItems: "center",
         // borderWidth:1
     }
 })

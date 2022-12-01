@@ -13,7 +13,7 @@ export default function LoginScreen() {
                 <View style={styles.topBg} />
                 <View style={styles.topCircle} >
                     <Image
-                        source={require("../../assets/images/Login-2-Imagen.png")}
+                        source={require("../assets/Images/Perfil-12-Imagen.png")}
                         style={{}}
                     />
                 </View>

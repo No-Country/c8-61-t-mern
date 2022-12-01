@@ -13,7 +13,7 @@ export default function SettingsScreen() {
                 <View style={styles.topBg} >
                     <Text style={styles.title}>Configuración</Text>
                     <Image
-                        source={require("../../assets/images/Configuración-13-imagen.png")}
+                        source={require("../assets/Images/Configuración-13-imagen.png")}
                         style={{}}
                     />
                 </View>

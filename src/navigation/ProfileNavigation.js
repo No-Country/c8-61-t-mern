@@ -24,7 +24,7 @@ export default function ProfileNavigation() {
                 },
                 headerRight: () => (
                     <Image
-                        source={require("../../assets/images/Perfil-12-Imagen.png")}
+                        source={require("../assets/Images/Perfil-12-Imagen.png")}
                         style={{ width: 130, height: 110, }}
                     />
                 ),

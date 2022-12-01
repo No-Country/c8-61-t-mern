@@ -16,7 +16,7 @@ export default function RecoverPasswordScreen() {
         <View style={styles.screenContainer}>
             <View style={styles.topBg} >
                 <Image
-                    source={require("../../assets/images/recuperar-4-imagen.png")}
+                    source={require("../assets/Images/recuperar-4-imagen.png")}
                     style={{}}
                 />
             </View>
