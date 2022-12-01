@@ -11,3 +11,5 @@ DEPENDENCIAS DE DESARROLLO
 se hace la instalacion de nodemon para que se reinicie el servidor automaticamente
 
 babel = convierte el codigo moderno a codigo actual
+
+CREACION DE RUTA REST API

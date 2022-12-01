@@ -1,2 +1,4 @@
-const greet = "hello world";
-console.log(greet);
+import app from "./app";
+
+app.listen(5000);
+console.log("Server on on port 5000");
