@@ -9,6 +9,8 @@ import ChartScreen from '../screens/ChartScreen';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 import { useNavigation } from '@react-navigation/native'
+import TransferNavigation from './TransferNavegation';
+
 export default function UserNavigation() {
     // si el usuario ya inicio sesion se mostrara esta navegacion
     const navigation = useNavigation()
@@ -27,7 +29,7 @@ export default function UserNavigation() {
                 )
             }}
             />
-            <Tab.Screen name='Transferencia' component={Transferencia} options={{
+            <Tab.Screen name='Transferencia' component={TransferNavigation} options={{
             headerShown: false,
             tabBarLabel: "Operaciones",
             tabBarIcon: ({ color, size }) => (
