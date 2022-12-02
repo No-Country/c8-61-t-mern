@@ -5,6 +5,9 @@ export const AuthContext = createContext();
 export function AuthProvider(props) {
     const { children } = props;
     // para habilitar el login, cambiar auth de "true" a "undefined"
+<<<<<<< HEAD
+    const [auth, setAuth] = useState(true);
+=======
     const [auth, setAuth] = useState({
         firstName: "lautaro",
         lastName: "duran",
@@ -15,6 +18,7 @@ export function AuthProvider(props) {
             { type: "visa", number: "4567123803871234" },
         ]
     });
+>>>>>>> a51a009a7e4baee5fccb4e5943f01659ca61ac03
     // const [createccount, setCreateAccount] = useState(undefined);
 
     const login = (userData) => {
