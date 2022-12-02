@@ -16,10 +16,9 @@ export default function TransferNavigation() {
             headerShower: false,
         }}>
             <Stack.Screen name='Transferir dinero' component={Transferencia} />
-            <Stack.Screen name='A otra cuenta Wally' component={CuentaWallyScreen} />
-            <Stack.Screen name='A un cbu' component={CbuTransferScreen} />
+            <Stack.Screen name='CuentaWallyScreen' component={CuentaWallyScreen} />
+            <Stack.Screen name='CbuTransferScreen' component={CbuTransferScreen} />
         </Stack.Navigator>
     )
 }
 
-const styles = StyleSheet.create({})

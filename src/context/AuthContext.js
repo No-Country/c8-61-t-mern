@@ -1,29 +1,20 @@
 import React, { useState, createContext } from "react";
-
+import UserProfile from '../utils/UserExample.json'
 export const AuthContext = createContext();
 
 export function AuthProvider(props) {
     const { children } = props;
     // para habilitar el login, cambiar auth de "true" a "undefined"
-<<<<<<< HEAD
-    const [auth, setAuth] = useState(true);
-=======
-    const [auth, setAuth] = useState({
-        firstName: "lautaro",
-        lastName: "duran",
-        money: "1000000",
-        cards: [
-            { type: "visa", number: "4567123409871234" },
-            { type: "masterCard", number: "4562473409871234" },
-            { type: "visa", number: "4567123803871234" },
-        ]
-    });
->>>>>>> a51a009a7e4baee5fccb4e5943f01659ca61ac03
+    const [auth, setAuth] = useState(UserProfile);
     // const [createccount, setCreateAccount] = useState(undefined);
-
+    function getData() {
+        fetch('')
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch(error => console.log(error))
+    }
     const login = (userData) => {
-        setAuth(userData);
-        console.log(auth);
+        setAuth(true)
     };
 
     const logout = () => {

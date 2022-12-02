@@ -9,13 +9,10 @@ import ChartScreen from '../screens/ChartScreen';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 import { useNavigation } from '@react-navigation/native'
-<<<<<<< HEAD
 import TransferNavigation from './TransferNavegation';
-
-=======
-import ProfileNavigation from './ProfileNavigation';
 import HomeNavegation from './HomeNavegation';
->>>>>>> a51a009a7e4baee5fccb4e5943f01659ca61ac03
+import ProfileNavigation  from './ProfileNavigation';
+
 export default function UserNavigation() {
     // si el usuario ya inicio sesion se mostrara esta navegacion
     const navigation = useNavigation()
@@ -29,7 +26,7 @@ export default function UserNavigation() {
                 tabBarActiveBackgroundColor: "#D4F194",
 
             }}>
-            <Tab.Screen name='HomeNavegation' component={HomeNavegation} options={{
+            <Tab.Screen name='HomeNavegation' component={HomeNavegation}  options={{
                 headerShown: false,
                 tabBarLabel: "Inicio",
                 tabBarIcon: ({ color, size }) => (
@@ -37,19 +34,11 @@ export default function UserNavigation() {
                 )
             }}
             />
-<<<<<<< HEAD
             <Tab.Screen name='Transferencia' component={TransferNavigation} options={{
             headerShown: false,
             tabBarLabel: "Operaciones",
             tabBarIcon: ({ color, size }) => (
                 <Icon name="dollar-sign" color={color} size={size} />
-=======
-            <Tab.Screen name='Transferencia' component={Transferencia} options={{
-                headerShown: false,
-                tabBarLabel: "Operaciones",
-                tabBarIcon: ({ color, size }) => (
-                    <Icon name="dollar-sign" color={color} size={size} />
->>>>>>> a51a009a7e4baee5fccb4e5943f01659ca61ac03
                 )
             }}
             />

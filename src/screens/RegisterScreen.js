@@ -3,7 +3,7 @@ import React from 'react'
 import Constants from 'expo-constants'
 import TitleComponent from '../components/TitleComponent'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import FormRegister from '../components/FormRegister'
+import FormRegister from '../components/forms/FormRegister'
 
 export default function RegisterScreen() {
 

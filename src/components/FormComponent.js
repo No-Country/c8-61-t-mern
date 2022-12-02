@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Input, Text } from 'react-native-elements'
-import { mask, MaskedTextInput } from "react-native-mask-text";
+import { MaskedTextInput } from "react-native-mask-text";
 export default function FormComponent({ text, type, inputRef, index, auth, errorMessage }) {
     const [openKeyboard, setOpenKeyboard] = React.useState(false)
     const [returnKeyTypeChange, setReturnKeyTypeChange] = React.useState("next")

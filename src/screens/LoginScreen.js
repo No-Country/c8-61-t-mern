@@ -3,7 +3,7 @@ import Constants from 'expo-constants'
 import TitleComponent from '../components/TitleComponent'
 import { StyleSheet, View, Dimensions, Image } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import FormLogin from '../components/FormLogin'
+import FormLogin from '../components/forms/FormLogin'
 
 export default function LoginScreen() {
 
@@ -13,7 +13,7 @@ export default function LoginScreen() {
                 <View style={styles.topBg} />
                 <View style={styles.topCircle} >
                     <Image
-                        source={require("../assets/Images/Perfil-12-Imagen.png")}
+                        source={require("../assets/Images/Login-2-Imagen.png")}
                         style={{}}
                     />
                 </View>

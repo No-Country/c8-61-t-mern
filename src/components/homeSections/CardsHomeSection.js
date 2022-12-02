@@ -3,8 +3,8 @@ import React from 'react'
 import { TextMask } from 'react-native-masked-text'
 import Icon from "react-native-vector-icons/FontAwesome5";
 import { useNavigation } from '@react-navigation/native';
-import useAuth from '../hooks/useAuth';
-import CardComponent from './CardComponent';
+import useAuth from '../../hooks/useAuth';
+import CardComponent from '../CardComponent';
 export default function CardsHomeSection() {
     const { auth } = useAuth()
     const navigation = useNavigation()
@@ -29,7 +29,7 @@ export default function CardsHomeSection() {
     return (
         <View style={styles.cardsContainer}>
             <Text style={{ ...styles.sectionTitle, textAlign: "center" }}>Mis Cards</Text>
-            {auth.cards.map((card, index) => showCards(index, card))}
+            {auth.cards?.map((card, index) => showCards(index, card))}
 
             <Icon name="chevron-right" size={20} style={{ right: -15, position: "absolute", top: "36%", padding: 15 }} onPress={() => {
                 navigation.navigate("CardsScreen")

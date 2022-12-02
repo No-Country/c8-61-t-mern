@@ -1,47 +1,41 @@
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
-import FormComponent from './FormComponent'
-import ButtonComponent from './ButtonComponent'
-import { Text } from 'react-native-elements'
-import useValidationForms from '../hooks/useValidationForms'
+import FormComponent from '../FormComponent';
+import ButtonComponent from '../ButtonComponent';
+import useValidationForms from '../../hooks/useValidationForms';
 
-export default function FormLogin() {
+
+export default function FormRegister() {
     const inputRef = React.useRef([])
+
     const {
-        questionsLogin,
-        authLogin,
+        questionsRegister,
+        authRegister,
     } = useValidationForms()
-    const errorMessages = Object.entries(authLogin?.errors)
+    const errorMessages = Object.entries(authRegister.errors)
+
     return (
-        <View style={styles.componentContainer}>
+        <View style={styles.componentContainer} >
             <View style={styles.formContainer} >
-                {questionsLogin.map((question, index) =>
+                {questionsRegister.map((question, index) =>
                     <FormComponent
                         text={question.text}
                         type={question.type}
                         key={index}
                         index={index}
                         inputRef={inputRef}
-                        auth={authLogin}
+                        auth={authRegister}
                         errorMessage={errorMessages.map((typeError) => { return question.type === typeError[0] && typeError[1] }
                         )}
                     />
                 )}
             </View>
-
             <View style={styles.btnsContainer}>
-                <ButtonComponent
-                    styleType={"btnPrincipal"}
-                    text="Iniciar sesión" auth={authLogin} />
-                <ButtonComponent
-                    styleType={"btnSecndary"}
-                    text="¿No tienes cuenta?" goTo="RegisterScreen" />
-                <ButtonComponent
-                    styleType={"btnSecndary"}
-                    text="¿Olvidaste tu contraseña?" goTo="RecoverPasswordScreen" />
+                <ButtonComponent styleType={"btnPrincipal"} text="Crear cuenta" auth={authRegister} />
+                <ButtonComponent styleType={"btnSecndary"} text="¿Ya tienes una cuenta?" goTo="LoginScreen" />
             </View>
+        </View>
 
-        </View >
     )
 }
 
@@ -49,12 +43,11 @@ const styles = StyleSheet.create({
     componentContainer: {
         flex: 1,
         width: "100%",
-        marginTop: 40,
     },
     formContainer: {
-        flex: 1,
-        justifyContent: "space-around",
-        height: "auto",
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "wrap",
     },
     btnsContainer: {
         flex: 1,

@@ -4,9 +4,9 @@ import useAuth from '../hooks/useAuth'
 import Constants from 'expo-constants'
 import ButtonComponent from '../components/ButtonComponent'
 import { TextMask } from 'react-native-masked-text'
-import FunctionsHomeSection from '../components/FunctionsHomeSection'
-import CardsHomeSection from '../components/CardsHomeSection'
-import ActivityHomeSection from '../components/ActivityHomeSection'
+import FunctionsHomeSection from '../components/homeSections/FunctionsHomeSection'
+import CardsHomeSection from '../components/homeSections/CardsHomeSection'
+import ActivityHomeSection from '../components/homeSections/ActivityHomeSection'
 export default function HomeScreen() {
     const { auth } = useAuth()
     return (

@@ -1,0 +1,19 @@
+{
+    "firstName": "Lautaro",
+    "lastName": "Duran",
+    "money": "1006020",
+    "cards": [
+        {
+            "type": "masterCard",
+            "number": "4567123409871234"
+        },
+        {
+            "type": "masterCard",
+            "number": "4562473409871234"
+        },
+        {
+            "type": "visa",
+            "number": "4567123803871234"
+        }
+    ]
+}

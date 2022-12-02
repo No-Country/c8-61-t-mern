@@ -18,7 +18,7 @@ export default function CardsScreen() {
             <View style={styles.headerContainer}>
                 <View style={styles.avatarIcon} ></View>
                 <View>
-                    <Text style={styles.sectionTitle}>{auth.name || "User"}</Text>
+                    <Text style={styles.sectionTitle}>{auth.firstName + " " + auth.lastName}</Text>
                     <TextMask style={styles.mountHeader}
                         value={"10050"}
                         type={'money'}
@@ -32,8 +32,8 @@ export default function CardsScreen() {
             </View>
             <View style={styles.cardsContainer}>
                 <Text style={{ ...styles.cardsTitle }}> Mis Cards</Text>
-                {auth.cards.map(({ type, number }, index) =>
-                    <View key={index} style={{ ...styles.cardItem, backgroundColor: type === "visa" ? "#3295D1": "#FF603D" }} >
+                {auth.cards?.map(({ type, number }, index) =>
+                    <View key={index} style={{ ...styles.cardItem, backgroundColor: type === "visa" ? "#3295D1" : "#FF603D" }} >
                         <TextMask style={styles.cardNumber}
                             value={number}
                             type={'credit-card'}
