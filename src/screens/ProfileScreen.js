@@ -4,6 +4,7 @@ import React from 'react'
 import { Image } from 'react-native-elements'
 
 export default function ProfileScreen() {
+  
   return (
     <View style={styles.screenContainer}>
       

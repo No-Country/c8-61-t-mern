@@ -7,12 +7,12 @@ export function AuthProvider(props) {
     // para habilitar el login, cambiar auth de "true" a "undefined"
     const [auth, setAuth] = useState(UserProfile);
     // const [createccount, setCreateAccount] = useState(undefined);
-    function getData() {
-        fetch('')
-            .then(res => res.json())
-            .then(data => console.log(data))
-            .catch(error => console.log(error))
-    }
+    // function getData() {
+    //     fetch('')
+    //         .then(res => res.json())
+    //         .then(data => console.log(data))
+    //         .catch(error => console.log(error))
+    // }
     const login = (userData) => {
         setAuth(true)
     };

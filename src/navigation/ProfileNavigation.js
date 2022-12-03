@@ -11,8 +11,6 @@ import TitleComponent from '../components/TitleComponent';
 
 const Stack = createNativeStackNavigator();
 export default function ProfileNavigation() {
-    const navigation = useNavigation()
-
     return (
         <Stack.Navigator screenOptions={{
         }}>
@@ -28,7 +26,7 @@ export default function ProfileNavigation() {
                         style={{ width: 130, height: 110, }}
                     />
                 ),
-            }} />  
+            }} />
             <Stack.Screen name='SettingsScreen' component={SettingsScreen} options={{
                 title: "",
             }} />

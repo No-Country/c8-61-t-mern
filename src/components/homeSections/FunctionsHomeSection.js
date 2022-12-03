@@ -1,21 +1,29 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-
+import RetirarIcon from '../icons/RetirarIcon'
+import IngresarIcon from '../icons/IngresarIcon'
+import TransferirIcon from '../icons/TransferirIcon'
+import PagarIcon from '../icons/PagarIcon'
 export default function FunctionsHomeSection() {
     return (
         <View style={styles.functionsContainer}>
             <Text style={styles.sectionTitle}>Usar mis fondos</Text>
             <View style={styles.functionsComponents}>
                 <View style={styles.component} >
+
+                    <RetirarIcon width={120} height={40} fill="#000" />
                     <Text style={styles.componentText}>Retirar Dinero</Text>
                 </View>
                 <View style={styles.component} >
+                    <IngresarIcon width={120} height={40} fill="#000" />
                     <Text style={styles.componentText}>Ingresar Dinero</Text>
                 </View>
                 <View style={styles.component} >
+                    <TransferirIcon width={120} height={40} fill="#000" />
                     <Text style={styles.componentText}>Transferir Dinero</Text>
                 </View>
                 <View style={styles.component} >
+                    <PagarIcon width={120} height={40} fill="#000" />
                     <Text style={styles.componentText}>realizar Pagos</Text>
                 </View>
             </View>
@@ -54,6 +62,8 @@ const styles = StyleSheet.create({
         left: 0,
     },
     component: {
+        justifyContent: "center",
+        alignItems: "center",
         height: 94,
         width: 74,
         backgroundColor: "#FFFFFF",
