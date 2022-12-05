@@ -8,9 +8,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SettingsNavigation from './SettingsNavigations';
 import { Image } from 'react-native-elements';
 import TitleComponent from '../components/TitleComponent';
-
+import SettingsIcon from '../components/icons/SettingsIcon'
 const Stack = createNativeStackNavigator();
 export default function ProfileNavigation() {
+    const navigation = useNavigation()
     return (
         <Stack.Navigator screenOptions={{
         }}>
@@ -21,14 +22,20 @@ export default function ProfileNavigation() {
 
                 },
                 headerRight: () => (
-                    <Image
-                        source={require("../assets/Images/Perfil-12-Imagen.png")}
-                        style={{ width: 130, height: 110, }}
-                    />
+                    <SettingsIcon width={60} height={60} fill="#000" onPress={() => navigation.navigate("SettingsScreen")} />
                 ),
             }} />
             <Stack.Screen name='SettingsScreen' component={SettingsScreen} options={{
-                title: "",
+                headerTitle: () => <Text style={{ color: "#FFFBF5", fontSize: 24, fontWeight: "700" }}>Configuración</Text>,
+                headerStyle: {
+                    backgroundColor: "#6CCCF2",
+                },
+                headerRight: () => (
+                    <Image
+                        source={require("../assets/Images/Configuración-13-imagen.png")}
+                        style={{width:200, height:60, resizeMode:"cover"}}
+                    />
+                ),
             }} />
         </Stack.Navigator>
     )

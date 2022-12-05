@@ -5,18 +5,18 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import { useNavigation } from '@react-navigation/native'
 
 export default function SettingsScreen() {
-    const navigation = useNavigation()
+    // const navigation = useNavigation()
     return (
 
         <KeyboardAwareScrollView style={{ flex: 1 }} >
             <View style={styles.screenContainer}>
-                <View style={styles.topBg} >
-                    <Text style={styles.title}>Configuración</Text>
+                {/* <View style={styles.topBg} > */}
+                    {/* <Text style={styles.title}>Configuración</Text> */}
                     <Image
                         source={require("../assets/Images/Configuración-13-imagen.png")}
                         style={{}}
                     />
-                </View>
+                {/* </View> */}
                 {/* <TitleComponent text="Registrarse con correo electrónico" />
                 <FormRegister /> */}
             </View>

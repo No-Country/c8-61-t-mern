@@ -1,7 +1,7 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ChartScreen from '../screens/ChartScreen';
-import TransferNavigation from './TransferNavegation';
+import TransferNavigation from './TransferNavigation';
 import HomeNavegation from './HomeNavegation';
 import ProfileNavigation from './ProfileNavigation';
 import HomeIcon from '../components/icons/HomeIcon/'
@@ -28,7 +28,7 @@ export default function UserNavigation() {
                 )
             }}
             />
-            <Tab.Screen name='Transferencia' component={TransferNavigation} options={{
+            <Tab.Screen name='TransferNavigation' component={TransferNavigation} options={{
                 headerShown: false,
                 tabBarLabel: "Operaciones",
                 tabBarIcon: () => (

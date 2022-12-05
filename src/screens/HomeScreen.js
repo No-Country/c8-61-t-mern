@@ -7,13 +7,19 @@ import { TextMask } from 'react-native-masked-text'
 import FunctionsHomeSection from '../components/homeSections/FunctionsHomeSection'
 import CardsHomeSection from '../components/homeSections/CardsHomeSection'
 import ActivityHomeSection from '../components/homeSections/ActivityHomeSection'
+import { Image } from 'react-native-elements'
 export default function HomeScreen() {
     const { auth } = useAuth()
     return (
         <View  >
             <ScrollView contentContainerStyle={styles.screenContainer}>
                 <View style={styles.headerContainer}>
-                    <View style={styles.avatarIcon} ></View>
+                    <View style={styles.bgCircle} >
+                        <Image
+                            source={require("../assets/Images/Perfil-12-Imagen-recorte.png")}
+                            style={styles.img}
+                        />
+                    </View>
                     <View>
                         <Text style={styles.sectionTitle}>¡Hola! {auth.firstName + " " + auth.lastName}</Text>
                         <TextMask style={styles.mountHeader}
@@ -40,7 +46,7 @@ export default function HomeScreen() {
                         <Text style={{ fontSize: 60, fontWeight: "100" }}>50</Text>
                     </View>
                 </View>
-                <ActivityHomeSection/>
+                <ActivityHomeSection />
             </ ScrollView>
         </View>
     )
@@ -65,19 +71,33 @@ const styles = StyleSheet.create({
         fontWeight: "700",
         fontSize: 18,
     },
-    avatarIcon: {
-        backgroundColor: "#000",
-        height: 90,
+    bgCircle: {
+        backgroundColor: "#D4F194",
+        height: 100,
+        width: 100,
+        display:"flex",
+        justifyContent:"flex-end",
+        alignItems:"center",
+        overflow:"hidden",
+        // position:"relative",
+        // borderWidth: 1,
+        borderRadius: 500,
+      },
+      img: {
+        // width: Dimensions.get("window").width / 1.4,
+        // height: Dimensions.get("window").width / 1.4,
         width: 90,
-        borderRadius: 50
-    },
+        //  backgroundColor: "#D4F194",
+        height: 90,
+        resizeMode: 'contain',
+      },
     mountHeader: {
         color: "#52A62D",
         fontWeight: "700",
         fontSize: 24,
     },
 
-   
+
     carbonoNeutralContainer: {
         width: 430,
         height: 167,
@@ -86,7 +106,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#EBF3CE",
         padding: "7%",
     },
-    
+
     carbonoNeutralText: {
         color: "#52A62D",
         fontWeight: "700",

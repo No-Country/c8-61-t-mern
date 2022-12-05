@@ -5,6 +5,7 @@ import { TextMask } from 'react-native-masked-text'
 import useAuth from '../hooks/useAuth'
 import ButtonComponent from '../components/ButtonComponent'
 import CardComponent from '../components/CardComponent'
+import { Image } from 'react-native-elements'
 
 export default function CardsScreen() {
     const { auth } = useAuth()
@@ -16,7 +17,12 @@ export default function CardsScreen() {
     return (
         <View style={styles.screenContainer}>
             <View style={styles.headerContainer}>
-                <View style={styles.avatarIcon} ></View>
+                <View style={styles.bgCircle} >
+                    <Image
+                        source={require("../assets/Images/Perfil-12-Imagen-recorte.png")}
+                        style={styles.img}
+                    />
+                </View>
                 <View>
                     <Text style={styles.sectionTitle}>{auth.firstName + " " + auth.lastName}</Text>
                     <TextMask style={styles.mountHeader}
@@ -75,12 +81,26 @@ const styles = StyleSheet.create({
         fontWeight: "700",
         fontSize: 18,
     },
-    avatarIcon: {
-        marginRight: "10%",
-        backgroundColor: "#000",
-        height: 90,
+    bgCircle: {
+        backgroundColor: "#D4F194",
+        height: 100,
+        width: 100,
+        display: "flex",
+        justifyContent: "flex-end",
+        alignItems: "center",
+        overflow: "hidden",
+        marginRight:20,
+        // position:"relative",
+        // borderWidth: 1,
+        borderRadius: 500,
+    },
+    img: {
+        // width: Dimensions.get("window").width / 1.4,
+        // height: Dimensions.get("window").width / 1.4,
         width: 90,
-        borderRadius: 50
+        //  backgroundColor: "#D4F194",
+        height: 90,
+        resizeMode: 'contain',
     },
     mountHeader: {
         color: "#ffffff",
