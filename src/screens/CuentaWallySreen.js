@@ -6,7 +6,7 @@ import ButtonComponent from "../components/ButtonComponent";
 import TitleComponent from "../components/TitleComponent";
 
 export default function CuentaWallyScreen() {
-
+    
     return (
         <SafeAreaView style={{
              justifyContent: 'center',
@@ -24,7 +24,7 @@ export default function CuentaWallyScreen() {
 
             <TitleComponent text="Elegir usuario Wally"/>
 
-        
+            
         </SafeAreaView>
     )
 }
