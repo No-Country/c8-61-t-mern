@@ -40,6 +40,7 @@ export default function CardsScreen() {
                 <Text style={{ ...styles.cardsTitle }}> Mis Cards</Text>
                 {auth.cards?.map(({ type, number }, index) =>
                     <View key={index} style={{ ...styles.cardItem, backgroundColor: type === "visa" ? "#3295D1" : "#FF603D" }} >
+                        <Text style={{color:"#fff"}}>{type}</Text>
                         <TextMask style={styles.cardNumber}
                             value={number}
                             type={'credit-card'}

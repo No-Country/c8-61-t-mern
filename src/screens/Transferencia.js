@@ -35,7 +35,7 @@ export default function Transferencia() {
             <View style={styles.menu}>
                 <Icon name="wallet" size={20} style={{ color:"#52A62D"}} />
                 <Text style={styles.texto}>A otra cuenta Wally</Text>
-                <Icon name="chevron-right" size={20} style={{ color:"#52A62D"}}
+                <Icon name="chevron-right" size={20} style={{ color:"#52A62D", padding:10}}
                     onPress={() => {
                         navigation.navigate("CuentaWallyScreen")
                     }} />
@@ -44,7 +44,7 @@ export default function Transferencia() {
             <View style={styles.menu}>
                 <Icon name="money-bill" size={20} style={{ color:"#52A62D"}} />
                 <Text style={styles.texto}>A un CBU</Text>
-                <Icon name="chevron-right" size={20} style={{ color:"#52A62D"}}
+                <Icon name="chevron-right" size={20} style={{ color:"#52A62D", padding:10}}
                     onPress={() => {
                         navigation.navigate("CbuTransferScreen")
                     }} />
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     },
     texto: {
         textAlign: "left",
-        width: "80%",
+        width: "75%",
         // borderWidth:1
     }
 })

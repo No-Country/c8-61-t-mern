@@ -5,7 +5,7 @@
     "cards": [
         {
             "type": "masterCard",
-            "number": "4567123409871234"
+            "number": "4567123409874321"
         },
         {
             "type": "masterCard",
@@ -14,6 +14,23 @@
         {
             "type": "visa",
             "number": "4567123803871234"
+        }
+    ],
+    "contacts": [
+        {
+            "firstName": "Maria",
+            "lastName": "Massi",
+            "id": "48cd-a711"
+        },
+        {
+            "firstName": "Celeste ",
+            "lastName": "Reinaudo",
+            "id": "44b5-9a0c"
+        },
+        {
+            "firstName": "Claudia",
+            "lastName": "Calderon",
+            "id": "4c8a-817d"
         }
     ]
 }

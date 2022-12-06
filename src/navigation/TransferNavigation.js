@@ -5,6 +5,7 @@ import CbuTransferScreen from '../screens/CbuTransferScreen';
 import Transferencia from '../screens/Transferencia';
 import { NavigationContainer } from '@react-navigation/native';
 import { Text } from 'react-native-elements';
+import SelectAmountScreen from '../screens/SelectAmountScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,6 +31,12 @@ export default function TransferNavigation() {
             }} />
             <Stack.Screen name='CbuTransferScreen' component={CbuTransferScreen} options={{
                 headerTitle: () => <Text style={{ color: "#52A62D", fontSize: 24, fontWeight: "700" }}>Enviar dinero</Text>,
+                headerStyle: {
+                    backgroundColor: "#D4F194",
+                },
+            }} />
+            <Stack.Screen name='SelectAmountScreen' component={SelectAmountScreen} options={{
+                headerTitle: () => <Text style={{ color: "#52A62D", fontSize: 24, fontWeight: "700" }}>Enviar dinero a ...</Text>,
                 headerStyle: {
                     backgroundColor: "#D4F194",
                 },
