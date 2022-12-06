@@ -31,11 +31,7 @@ export default function CbuTransferScreen() {
                     autoCapitalize="none"
                 />
                 <ButtonComponent styleType={"btnSecndary"} text="Ingresar nuevo CBU" />
-                <TextInput
-                    placeholder="Monto"
-                    style={styles.input}
-                    autoCapitalize="none"
-                />
+             
                 <ButtonComponent styleType={"btnPrincipal"} text="Seleccionar" />
             </View>
         </SafeAreaView>

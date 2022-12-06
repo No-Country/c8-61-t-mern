@@ -8,6 +8,9 @@ import HomeIcon from '../components/icons/HomeIcon/'
 import OperationsIcon from '../components/icons/OperationsIcon'
 import MovementsIcon from '../components/icons/MovementsIcon'
 import ProfileIcon from '../components/icons/ProfileIcon'
+
+import TransferScreen from '../screens/TransferScreen';
+
 const Tab = createBottomTabNavigator();
 export default function UserNavigation() {
     // si el usuario ya inicio sesion se mostrara esta navegacion
