@@ -31,7 +31,7 @@ export default function UserNavigation() {
                 )
             }}
             />
-            <Tab.Screen name='TransferNavigation' component={TransferNavigation} options={{
+            <Tab.Screen name='TransferNavigation' component={TransferScreen} options={{
                 headerShown: false,
                 tabBarLabel: "Operaciones",
                 tabBarIcon: () => (
