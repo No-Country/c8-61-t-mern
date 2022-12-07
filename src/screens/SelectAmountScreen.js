@@ -1,8 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, TextInput, View } from 'react-native'
 import React from 'react'
 import { Header, Icon, Image } from 'react-native-elements'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import TitleComponent from '../components/TitleComponent'
+import ButtonComponent from "../components/ButtonComponent";
 
 
 // const goBack = () => {
@@ -42,6 +43,14 @@ export default function SelectAmountScreen({ navigation, route }) {
                     source={require("../assets/Images/Transferir-8-imagen.png")}
                     style={styles.img}
                 />
+
+                <TextInput style={styles.input}
+                    placeholder="Ingresar monto"
+                    autoCapitalize="none"
+                />
+            </View>
+            <View style={styles.button}>
+                <ButtonComponent styleType={"btnPrincipal"} text="Enviar" />
             </View>
         </View>
     )
@@ -59,5 +68,16 @@ const styles = StyleSheet.create({
         //  backgroundColor: "#D4F194",
         height: 150,
         // resizeMode: 'contain'
+    },
+    input: {
+        width: '70%',
+        height: 40,
+        textAlign: 'center'
+    },
+    button: {
+        marginTop: 300,
+        textAlign: 'center',
+        justifyContent: 'center',
+        marginLeft: 120,
     }
 })
