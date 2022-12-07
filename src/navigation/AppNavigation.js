@@ -10,18 +10,16 @@ import MovementsIcon from '../components/icons/MovementsIcon'
 import ProfileIcon from '../components/icons/ProfileIcon'
 
 import TransferScreen from '../screens/TransferScreen';
-
 const Tab = createBottomTabNavigator();
-export default function UserNavigation() {
-    // si el usuario ya inicio sesion se mostrara esta navegacion
 
+export default function AppNavigation() {
     return (
         <Tab.Navigator
             screenOptions={{
                 tabBarActiveTintColor: "#52A62D",
                 tabBarInactiveTintColor: "#9CD919",
                 tabBarActiveBackgroundColor: "#D4F194",
-                tabBarHideOnKeyboard:true
+                tabBarHideOnKeyboard: true
 
             }}>
             <Tab.Screen name='HomeNavegation' component={HomeNavegation} options={{
@@ -32,7 +30,7 @@ export default function UserNavigation() {
                 )
             }}
             />
-            <Tab.Screen name='TransferNavigation' component={TransferNavigation} options={{
+            <Tab.Screen  name='TransferNavigation' component={TransferNavigation} options={{
                 headerShown: false,
                 tabBarLabel: "Operaciones",
                 tabBarIcon: () => (

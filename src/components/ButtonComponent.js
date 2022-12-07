@@ -2,11 +2,11 @@ import { TouchableOpacity, StyleSheet, Text } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 
-export default function ButtonComponent({ styleType, text, goTo, auth }) {
+export default function ButtonComponent({ styleType, text, goTo, auth, params }) {
     // "auth" se usa para botones de validacion de formularios y "goTo" para navegacio
     const navigation = useNavigation();
     return (
-        <TouchableOpacity onPress={auth?.handleSubmit || (() => navigation.navigate(goTo))
+        <TouchableOpacity onPress={auth?.handleSubmit || (() => navigation.navigate(goTo, {params}))
         }
             style={styles[styleType]} >
             <Text style={styles[`${styleType}_text`]}>{text}</Text>

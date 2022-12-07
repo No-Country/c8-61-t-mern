@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native"
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native"
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Constants from 'expo-constants'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -32,23 +32,23 @@ export default function Transferencia() {
 
             {/* <TitleComponent text="Transferir dinero" /> */}
 
-            <View style={styles.menu}>
-                <Icon name="wallet" size={20} style={{ color:"#52A62D"}} />
+            <TouchableOpacity onPress={() => {
+                navigation.navigate("CuentaWallyScreen")
+            }} style={styles.menu}>
+                <Icon name="wallet" size={20} style={{ color: "#52A62D" }} />
                 <Text style={styles.texto}>A otra cuenta Wally</Text>
-                <Icon name="chevron-right" size={20} style={{ color:"#52A62D", padding:10}}
-                    onPress={() => {
-                        navigation.navigate("CuentaWallyScreen")
-                    }} />
-            </View>
+                <Icon name="chevron-right" size={20} style={{ color: "#52A62D", padding: 10 }}
+                />
+            </TouchableOpacity>
 
-            <View style={styles.menu}>
-                <Icon name="money-bill" size={20} style={{ color:"#52A62D"}} />
+            <TouchableOpacity onPress={() => {
+                navigation.navigate("CbuTransferScreen")
+            }} style={styles.menu}>
+                <Icon name="money-bill" size={20} style={{ color: "#52A62D" }} />
                 <Text style={styles.texto}>A un CBU</Text>
-                <Icon name="chevron-right" size={20} style={{ color:"#52A62D", padding:10}}
-                    onPress={() => {
-                        navigation.navigate("CbuTransferScreen")
-                    }} />
-            </View>
+                <Icon name="chevron-right" size={20} style={{ color: "#52A62D", padding: 10 }}
+                />
+            </TouchableOpacity>
 
         </SafeAreaView>
     );
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         alignItems: "center",
         // textAlign: "left"
-        borderBottomWidth:1
+        borderBottomWidth: 1
     },
     texto: {
         textAlign: "left",

@@ -16,33 +16,33 @@ export default function TransferScreen() {
       alignItems: 'center',
     }}>
 
-     <View style={{
-         position: "absolute",
-         top: 0,
-         marginTop: Constants.statusBarHeight,
-         backgroundColor: "#EBF3CE",
-         height: 80,
-         width: "100%",
-     }} />
+      <View style={{
+        position: "absolute",
+        top: 0,
+        marginTop: Constants.statusBarHeight,
+        backgroundColor: "#EBF3CE",
+        height: 80,
+        width: "100%",
+      }} />
 
-    <TitleComponent text="Enviar dinero a ...." />
-      
-       <Image
-          source={require("../assets/Images/Transferir-8-imagen.png")}
-          style={styles.img}>
-        </Image>
+      <TitleComponent text="Enviar dinero a ...." />
 
-        <TextInput style={styles.input}
-          placeholder="Ingresar monto"
-          autoCapitalize="none"
-        />
-        
-        <View>
-            <View style={styles.button}>
-                <ButtonComponent styleType={"btnPrincipal"} text="Enviar" />
-            </View>
-    </View>
-  
+      <Image
+        source={require("../assets/Images/Transferir-8-imagen.png")}
+        style={styles.img}>
+      </Image>
+
+      <TextInput style={styles.input}
+        placeholder="Ingresar monto"
+        autoCapitalize="none"
+      />
+
+      <View>
+        <View style={styles.button}>
+          <ButtonComponent styleType={"btnPrincipal"} text="Enviar" />
+        </View>
+      </View>
+
     </SafeAreaView>
   )
 }

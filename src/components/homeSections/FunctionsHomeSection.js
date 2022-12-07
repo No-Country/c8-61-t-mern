@@ -1,10 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import RetirarIcon from '../icons/RetirarIcon'
 import IngresarIcon from '../icons/IngresarIcon'
 import TransferirIcon from '../icons/TransferirIcon'
 import PagarIcon from '../icons/PagarIcon'
+import useAuth from '../../hooks/useAuth'
 export default function FunctionsHomeSection() {
+    const { setTransfer } = useAuth()
     return (
         <View style={styles.functionsContainer}>
             <Text style={styles.sectionTitle}>Usar mis fondos</Text>
@@ -18,10 +20,10 @@ export default function FunctionsHomeSection() {
                     <IngresarIcon width={120} height={40} fill="#000" />
                     <Text style={styles.componentText}>Ingresar Dinero</Text>
                 </View>
-                <View style={styles.component} >
+                <TouchableOpacity onPress={()=> setTransfer(true)} style={styles.component} >
                     <TransferirIcon width={120} height={40} fill="#000" />
                     <Text style={styles.componentText}>Transferir Dinero</Text>
-                </View>
+                </TouchableOpacity>
                 <View style={styles.component} >
                     <PagarIcon width={120} height={40} fill="#000" />
                     <Text style={styles.componentText}>realizar Pagos</Text>

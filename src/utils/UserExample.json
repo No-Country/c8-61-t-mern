@@ -1,7 +1,8 @@
 {
     "firstName": "Lautaro",
     "lastName": "Duran",
-    "money": "1006020",
+    "money": "100000",
+    "id": "42be-b444",
     "cards": [
         {
             "type": "masterCard",
