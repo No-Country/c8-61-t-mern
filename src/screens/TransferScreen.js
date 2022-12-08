@@ -5,7 +5,8 @@ import Constants from 'expo-constants'
 import React from 'react'
 import { Image } from 'react-native-elements'
 import TitleComponent from '../components/TitleComponent'
-//import { useNavigation } from '@react-navigation/native'
+import Icon from "react-native-vector-icons/FontAwesome5";
+import { useNavigation } from '@react-navigation/native'
 //import ButtonComponent from "../components/ButtonComponent";
 import { SafeAreaView } from 'react-native-safe-area-context'
 
@@ -54,29 +55,35 @@ const App = () => {
         <View style={styles.centeredView2}>
           <View style={styles.modalView}>
             <Text style={styles.modalText}>Revision</Text>
+            <View style={styles.modalContaint1}>
+            <Image
+           source={require("../assets/Images/visalogo.png")}
+           style={styles.img2}>
+         </Image>
+                {/* <Icon name="chevron-right" size={20} style={{ color:"#52A62D", padding:10}}
+                    // onPress={() => {
+                    //     navigation.navigate("CardComponent")
+                    //  }}
+                 /> */}
+                <Text style={styles.texto}>Tarjeta de debito 3245 Preferida</Text>
+                
+            </View>
+            <View>
+                <Text style={styles.modalText}>Total        $1234</Text>
+            </View>
+
             <Pressable
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
-            >
+              onPress={() => setModalVisible(!modalVisible)}>
               <Text style={styles.textStyle}>Enviar</Text>
             </Pressable>
           </View>
         </View>
       </Modal>
-
-
-
-         
      </SafeAreaView>
-
-
-
-
-      
       <Pressable
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
-      >
+        onPress={() => setModalVisible(true)}>
         <Text style={styles.textStyle}>Enviar dinero</Text>
       </Pressable>
     </View>
@@ -91,12 +98,17 @@ const styles = StyleSheet.create({
     marginTop: -150
   },
   centeredView2: {
-    marginTop: 550,
+    position:"absolute",
+    width:"100%",
+    bottom:0,
+    // paddingBottom:50
   },
   modalView: {
-    margin: 20,
+    // marginHorizontal: 10,
     backgroundColor: "white",
-    borderRadius: 20,
+    borderTopStartRadius: 20,
+    borderTopEndRadius:20,
+    // borderTopRightRadiusRadius: 20,
     padding: 35,
     alignItems: "center",
     shadowColor: "#000",
@@ -143,12 +155,19 @@ const styles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     textAlign: "center",
-    color: "#9CD919"
+    color: "#9CD919",
+    fontSize: 40,
+    fontStyle: 'bold'
   },
   img: {
     width: 180,
     height: 180,
     resizeMode: 'contain',
+  },
+  img2: {
+    width: 30,
+    height: 30,
+    alignItems: 'left'
   },
   button: {
   marginTop: 200,
@@ -157,6 +176,12 @@ const styles = StyleSheet.create({
     width: '70%',
     height: 40,
     textAlign: 'center'
+   },
+   modalContaint1: {
+    flexDirection: 'column',
+    borderBottomWidth:1,
+    padding: 20,
+    marginBottom: 20
    }
 });
 
