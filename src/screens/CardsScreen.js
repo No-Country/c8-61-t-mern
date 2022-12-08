@@ -26,7 +26,7 @@ export default function CardsScreen() {
                 <View>
                     <Text style={styles.sectionTitle}>{auth.firstName + " " + auth.lastName}</Text>
                     <TextMask style={styles.mountHeader}
-                        value={"10050"}
+                        value={auth.money}
                         type={'money'}
                         options={{
                             precision: 2,

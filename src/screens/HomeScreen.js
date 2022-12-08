@@ -31,6 +31,7 @@ export default function HomeScreen() {
                                 delimiter: '.',
                                 unit: '$',
                             }} />
+                            <Text style={{...styles.sectionTitle, fontSize:15, fontWeight:"400"}} >Wallytags: {auth.wallytag}</Text>
                     </View>
                 </View>
                 <FunctionsHomeSection />
@@ -39,7 +40,7 @@ export default function HomeScreen() {
                     <Text style={{ ...styles.carbonoNeutralText, width: 187 }}>wally team
                         trabajando para
                         carbono neutral
-                        <ButtonComponent text={"conocer mas"} styleType="btnSecndary" />
+                        <ButtonComponent text={"conocer más"} styleType="btnSecndary" />
                     </Text>
                     <View style={styles.carbonoNeutralContainer_Circle} >
                         <Text style={{ fontSize: 17 }}>Mes actual</Text>

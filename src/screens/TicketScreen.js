@@ -5,6 +5,7 @@ import { mask, unMask } from 'react-native-mask-text';
 import { MaskService, TextMask } from 'react-native-masked-text'
 import ButtonComponent from '../components/ButtonComponent';
 import { Image } from 'react-native-elements';
+import { useNavigation } from '@react-navigation/native';
 
 export default function TicketScreen({ route }) {
     const { auth, setTransfer } = useAuth()
@@ -13,6 +14,8 @@ export default function TicketScreen({ route }) {
     const amountClear = amount.slice(1)
     const amountNumber = parseFloat(amountClear)
     const amountUnMask = unMask(amount)
+    const navigate = useNavigation()
+    auth.wallytag = auth.wallytag +12
     const userMoney = mask(auth.money, undefined, 'money', {
         precision: 2,
         separator: ',',
@@ -41,7 +44,7 @@ export default function TicketScreen({ route }) {
                     <View style={{ borderBottomWidth: 1, padding: 10 }}>
                         <Text style={{ fontWeight: "700", fontSize: 18 }}>{fechaCompleta} </Text>
                         <Text style={{ fontWeight: "700", color: "gray", fontSize: 18 }}>Comprobante de transferencia</Text>
-                        <Text style={{ fontWeight: "700", color: "gray", fontSize: 18 }}>Numero de operacion: 7468780194</Text>
+                        <Text style={{ fontWeight: "700", color: "gray", fontSize: 18 }}>Número de operación: 7468780194</Text>
                     </View>
                     <View style={{}}>
                         <TextMask
@@ -76,7 +79,7 @@ export default function TicketScreen({ route }) {
                 </View>
                 <View style={styles.carbonoNeutralContainer}>
                     <Text style={{ ...styles.carbonoNeutralText, width: 187 }}>
-                        ¡Felicidades! Tu operacion suma:
+                        ¡Felicidades! Tu operación suma:
                     </Text>
                     <View style={styles.carbonoNeutralContainer_Circle} >
                         <Text style={{ fontSize: 60, fontWeight: "100" }}>12</Text>
@@ -96,7 +99,7 @@ export default function TicketScreen({ route }) {
                         borderColor: "#3295D1",
                         borderWidth: 10
                     }} >
-                        <Text style={{ fontSize: 60, fontWeight: "100" }}>83</Text>
+                        <Text style={{ fontSize: 60, fontWeight: "100" }}>{auth.wallytag}</Text>
                         <Text style={{ fontSize: 17 }}>Puntos</Text>
                     </View>
                     <View style={{
@@ -118,14 +121,14 @@ export default function TicketScreen({ route }) {
                     </View>
                     <View style={{ marginTop: 120, width: "100%", display: "flex", alignItems: "center" }}>
                         <Text style={{ fontSize: 20, fontWeight: "740", width: "70%", textAlign: "center", color: "gray" }}>Estás en <Text style={{ fontWeight: "700", color: "#000" }}>Modo semilla</Text></Text>
-                        <Text style={{ fontSize: 20, fontWeight: "740", width: "70%", textAlign: "center", color: "gray" }}>faltan  <Text style={{ fontWeight: "700", color: "#000" }}>17 puntos</Text> </Text>
+                        <Text style={{ fontSize: 20, fontWeight: "740", width: "70%", textAlign: "center", color: "gray" }}>faltan  <Text style={{ fontWeight: "700", color: "#000" }}>{100- auth.wallytag} puntos</Text> </Text>
                         <Text style={{ fontSize: 20, fontWeight: "740", width: "75%", textAlign: "center", color: "gray", marginBottom: 30 }}>para plantar tu <Text style={{ fontWeight: "700", color: "#000" }}>Primer árbol</Text></Text>
-                        <ButtonComponent text={"Saber mas"} styleType="btnPrincipal" />
+                        <ButtonComponent text={"Saber más"} styleType="btnPrincipal" />
                         <ButtonComponent text={"Volver a inicio"} styleType="btnSecndary" goTo={"HomeScreen"} />
-                        <TouchableOpacity
+                        {/* <TouchableOpacity onPress={() => navigate.navigate("HomeScreen")}
                             style={styles.btnSecndary} >
-                            <Text style={styles.btnSecndary}>Volver a inicio</Text>
-                        </TouchableOpacity >
+                            <Text style={styles.btnSecndary_text}>Volver a inicio</Text>
+                        </TouchableOpacity > */}
                     </View>
                 </View>
             </ScrollView>

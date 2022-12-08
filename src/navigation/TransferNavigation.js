@@ -18,7 +18,7 @@ export default function TransferNavigation() {
 
         <Stack.Navigator initialRouteName={"TransferirDinero"}>
             {/* <Stack.Group screenOptions={{ presentation:"modal" }}> */}
-                <Stack.Screen name='TransferirDinero' component={TransferScreen} options={{
+                <Stack.Screen name='TransferirDinero' component={Transferencia} options={{
                     headerTitle: () => <Text style={{ color: "#52A62D", fontSize: 24, fontWeight: "700" }}>Transferir dinero</Text>,
                     headerStyle: {
                         backgroundColor: "#D4F194",

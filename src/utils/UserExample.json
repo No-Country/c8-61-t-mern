@@ -2,6 +2,7 @@
     "firstName": "Lautaro",
     "lastName": "Duran",
     "money": "100000",
+    "wallytag": 71,
     "id": "42be-b444",
     "cards": [
         {
@@ -22,11 +23,6 @@
             "firstName": "Maria",
             "lastName": "Massi",
             "id": "48cd-a711"
-        },
-        {
-            "firstName": "Celeste ",
-            "lastName": "Reinaudo",
-            "id": "44b5-9a0c"
         },
         {
             "firstName": "Claudia",

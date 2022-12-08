@@ -13,67 +13,67 @@ const App = () => {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <View style={styles.centeredView}>
-      
 
-    <SafeAreaView style={{
-       justifyContent: 'center',
-       alignItems: 'center',
-     }}>
 
-      <View style={{
+      <SafeAreaView style={{
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
+
+        <View style={{
           position: "absolute",
           top: 0,
           marginTop: Constants.statusBarHeight,
           backgroundColor: "#EBF3CE",
           height: 80,
           width: "100%",
-      }} />
+        }} />
 
-     <TitleComponent text="Enviar dinero a ...." />
-      
+        <TitleComponent text="Enviar dinero a ...." />
+
         <Image
-           source={require("../assets/Images/Transferir-8-imagen.png")}
-           style={styles.img}>
-         </Image>
+          source={require("../assets/Images/Transferir-8-imagen.png")}
+          style={styles.img}>
+        </Image>
 
-         <TextInput style={styles.input}
-           placeholder="Ingresar monto"
-           autoCapitalize="none"
-         />
-        
+        <TextInput style={styles.input}
+          placeholder="Ingresar monto"
+          autoCapitalize="none"
+        />
+
 
         <Modal
-        
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
-        }}
-      >
-        <View style={styles.centeredView2}>
-          <View style={styles.modalView}>
-            <Text style={styles.modalText}>Revision</Text>
-            <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
-            >
-              <Text style={styles.textStyle}>Enviar</Text>
-            </Pressable>
+
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => {
+            Alert.alert("Modal has been closed.");
+            setModalVisible(!modalVisible);
+          }}
+        >
+          <View style={styles.centeredView2}>
+            <View style={styles.modalView}>
+              <Text style={styles.modalText}>Revision</Text>
+              <Pressable
+                style={[styles.button, styles.buttonClose]}
+                onPress={() => setModalVisible(!modalVisible)}
+              >
+                <Text style={styles.textStyle}>Enviar</Text>
+              </Pressable>
+            </View>
           </View>
-        </View>
-      </Modal>
-
-
-
-         
-     </SafeAreaView>
+        </Modal>
 
 
 
 
-      
+      </SafeAreaView>
+
+
+
+
+
       <Pressable
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible(true)}
@@ -92,16 +92,16 @@ const styles = StyleSheet.create({
     marginTop: -150
   },
   centeredView2: {
-    position:"absolute",
-    width:"100%",
-    bottom:0,
+    position: "absolute",
+    width: "100%",
+    bottom: 0,
     // paddingBottom:50
   },
   modalView: {
     // marginHorizontal: 10,
     backgroundColor: "white",
     borderTopStartRadius: 20,
-    borderTopEndRadius:20,
+    borderTopEndRadius: 20,
     // borderTopRightRadiusRadius: 20,
     padding: 35,
     alignItems: "center",
@@ -157,13 +157,13 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   button: {
-  marginTop: 200,
+    marginTop: 200,
   },
   input: {
     width: '70%',
     height: 40,
     textAlign: 'center'
-   }
+  }
 });
 
 export default App;
