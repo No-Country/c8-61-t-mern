@@ -48,6 +48,14 @@ export default function SelectAmountScreen({ route }) {
                     source={require("../assets/Images/Transferir-8-imagen.png")}
                     style={styles.img}
                 />
+
+                <TextInput style={styles.input}
+                    placeholder="Ingresar monto"
+                    autoCapitalize="none"
+                />
+            </View>
+            <View style={styles.button}>
+                <ButtonComponent styleType={"btnPrincipal"} text="Enviar" />
             </View>
             <View style={{ display: "flex", alignItems: "center", marginTop: 100 }}>
                 <Text style={{
