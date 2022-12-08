@@ -68,10 +68,10 @@ export default function TicketScreen({ route }) {
                     <View style={{ display: "flex", alignItems: "center" }}>
                         <View style={{ width: "100%", paddingVertical: 20 }}>
                             <Text style={{ fontSize: 16, color: "gray" }}>De:</Text>
-                            <Text style={{ fontSize: 16, }}>{auth.firstName} {auth.firstName}</Text>
+                            <Text style={{ fontSize: 16, }}>{auth.firstName} {auth.lastName}</Text>
                             <Text style={{ fontSize: 16, color: "gray" }}>wallytag: {auth.id}</Text>
                             <Text style={{ fontSize: 16, color: "gray" }}>A:</Text>
-                            <Text style={{ fontSize: 16, }}>{contact.firstName} {contact.firstName}</Text>
+                            <Text style={{ fontSize: 16, }}>{contact.firstName} {contact.lastName}</Text>
                             <Text style={{ fontSize: 16, color: "gray" }}>wallytag: {contact.id}</Text>
                         </View>
                         <ButtonComponent text={"Compartir"} styleType="btnPrincipal" />

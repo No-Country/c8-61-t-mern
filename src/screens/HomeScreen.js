@@ -31,7 +31,7 @@ export default function HomeScreen() {
                                 delimiter: '.',
                                 unit: '$',
                             }} />
-                            <Text style={{...styles.sectionTitle, fontSize:15, fontWeight:"400"}} >Wallytags: {auth.wallytag}</Text>
+                            <Text style={{...styles.sectionTitle, fontSize:15, fontWeight:"400"}} >Puntos: {auth.wallytag}</Text>
                     </View>
                 </View>
                 <FunctionsHomeSection />
