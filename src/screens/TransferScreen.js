@@ -5,7 +5,8 @@ import Constants from 'expo-constants'
 import React from 'react'
 import { Image } from 'react-native-elements'
 import TitleComponent from '../components/TitleComponent'
-//import { useNavigation } from '@react-navigation/native'
+import Icon from "react-native-vector-icons/FontAwesome5";
+import { useNavigation } from '@react-navigation/native'
 //import ButtonComponent from "../components/ButtonComponent";
 import { SafeAreaView } from 'react-native-safe-area-context'
 
@@ -76,8 +77,7 @@ const App = () => {
 
       <Pressable
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
-      >
+        onPress={() => setModalVisible(true)}>
         <Text style={styles.textStyle}>Enviar dinero</Text>
       </Pressable>
     </View>
@@ -149,12 +149,19 @@ const styles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     textAlign: "center",
-    color: "#9CD919"
+    color: "#9CD919",
+    fontSize: 40,
+    fontStyle: 'bold'
   },
   img: {
     width: 180,
     height: 180,
     resizeMode: 'contain',
+  },
+  img2: {
+    width: 30,
+    height: 30,
+    alignItems: 'left'
   },
   button: {
     marginTop: 200,
