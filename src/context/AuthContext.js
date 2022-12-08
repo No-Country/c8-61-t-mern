@@ -6,6 +6,7 @@ export function AuthProvider(props) {
     const { children } = props;
     // para habilitar el login, cambiar auth de "true" a "undefined"
     const [auth, setAuth] = useState(UserProfile);
+    const [transfer, setTransfer] = useState(undefined);
     // const [createccount, setCreateAccount] = useState(undefined);
     // function getData() {
     //     fetch('')
@@ -29,9 +30,11 @@ export function AuthProvider(props) {
         <AuthContext.Provider value={
             {
                 auth,
+                transfer,
                 // createAccount,
 
                 login,
+                setTransfer,
                 logout,
                 register
             }
