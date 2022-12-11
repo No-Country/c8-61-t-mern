@@ -30,13 +30,13 @@ JavaScript
 
 <a name="deploy"></a>
 
-## Deploy:
-1. Clonar el repositorio
-2. Instalar las dependencias necesarias <code>npm install</code> / <code>yarn add</code>
-3. Descargar Expo Go desde :
+## Deploy
+
+1. Descargar Expo Go desde :
 
 -   [Android Playstore](https://play.google.com/store/apps/details?id=host.exp.exponent)
 -   [Apple App Store](https://apps.apple.com/es/app/expo-go/id982107779)
 
-4. Iniciar el servidor <code>npm start</code> / <code>yarn start</code>
-5. Scanneá el QR que aparece en consola con el scanner que se encuentra al ejecutar Expo Go
+2. Scanneá el QR 👇 , con el scanner que se encuentra al ejecutar Expo Go .
+   <br>
+   <img src="https://qr.expo.dev/expo-go?owner=lautty_duran&slug=my-app&releaseChannel=default&host=exp.host" alt="expo" width="200" height="200" >
