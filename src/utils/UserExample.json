@@ -1,0 +1,33 @@
+{
+    "firstName": "Lautaro",
+    "lastName": "Duran",
+    "money": "100000",
+    "wallytag": 71,
+    "id": "42be-b444",
+    "cards": [
+        {
+            "type": "masterCard",
+            "number": "4567123409874321"
+        },
+        {
+            "type": "masterCard",
+            "number": "4562473409871234"
+        },
+        {
+            "type": "visa",
+            "number": "4567123803871234"
+        }
+    ],
+    "contacts": [
+        {
+            "firstName": "Maria",
+            "lastName": "Massi",
+            "id": "48cd-a711"
+        },
+        {
+            "firstName": "Claudia",
+            "lastName": "Calderon",
+            "id": "4c8a-817d"
+        }
+    ]
+}

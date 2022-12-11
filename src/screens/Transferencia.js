@@ -1,58 +1,82 @@
 import React from "react";
-import {StyleSheet, View, Text, TextInput, Button, Keyboard} from "react-native"
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native"
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Constants from 'expo-constants'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { BottomTabView, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useNavigation } from "@react-navigation/native";
+import TitleComponent from "../components/TitleComponent";
+// import { Icon } from "react-native-elements";
+import Icon from "react-native-vector-icons/FontAwesome5";
+
+const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
 export default function Transferencia() {
- 
+    const navigation = useNavigation()
+
     return (
         <SafeAreaView style={{
-            flex: 1,
             justifyContent: 'center',
             alignItems: 'center',
-            }}>
+        }}>
 
             <View style={{
                 position: "absolute",
                 top: 0,
-                marginTop: Constants.statusBarHeight,
-                backgroundColor: "#EBF3CE",
-                height: 100,
+                // marginTop: Constants.statusBarHeight,
+                // backgroundColor: "#EBF3CE",
+                height: 80,
                 width: "100%",
             }} />
 
-            <TitleComponent text="Transferencia" />
-            <View style={styles.title}>
-                <TextInput
-                    placeholder="CBU destino"
-                    style={styles.input}
-                    autoCapitalize="none"
-                    //deberia ser un input que te lleve al listado ya cargado de cbu?
+            {/* <TitleComponent text="Transferir dinero" /> */}
+
+            <TouchableOpacity onPress={() => {
+                navigation.navigate("CuentaWallyScreen")
+            }} style={styles.menu}>
+                <Icon name="wallet" size={20} style={{ color: "#52A62D" }} />
+                <Text style={styles.texto}>A otra cuenta Wally</Text>
+                <Icon name="chevron-right" size={20} style={{ color: "#52A62D", padding: 10 }}
                 />
-                <BottonComponent styleType={"btnSecndary"} text="Ingresar nuevo CBU" />
-                <TextInput
-                    placeholder="Monto"
-                    style={styles.input}
-                    autoCapitalize="none"
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => {
+                navigation.navigate("CbuTransferScreen")
+            }} style={styles.menu}>
+                <Icon name="money-bill" size={20} style={{ color: "#52A62D" }} />
+                <Text style={styles.texto}>A un CBU</Text>
+                <Icon name="chevron-right" size={20} style={{ color: "#52A62D", padding: 10 }}
                 />
-                <BottonComponent styleType={"btnPrincipal"} text="Transferir" />
-            </View>
+            </TouchableOpacity>
+
         </SafeAreaView>
-  )
+    );
 }
 
+
 const styles = StyleSheet.create({
-  title: {
-    width: "80%",
-    flex: 1,
-    justifyContent: 'space-around',
-    alignItems: 'center'
-  },
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-    borderRadius: 10,
-  }
-});
+    screenContainer_title: {
+        fontSize: 30
+    },
+    screenContainer_content: {
+        flex: 1,
+        justifyContent: "center"
+    },
+    menu: {
+        display: "flex",
+        flexDirection: "row",
+        // borderWidth: 1,
+        width: "70%",
+        height: 70,
+        justifyContent: "space-around",
+        alignItems: "center",
+        // textAlign: "left"
+        borderBottomWidth: 1
+    },
+    texto: {
+        textAlign: "left",
+        width: "75%",
+        // borderWidth:1
+    }
+})

@@ -1,25 +1,24 @@
-import { StyleSheet, View, Dimensions, Text } from 'react-native'
+import { StyleSheet, Text, View, Dimensions } from 'react-native'
 import React from 'react'
-import Constants from 'expo-constants'
-import TitleComponent from '../components/TitleComponent'
+import { Image } from 'react-native-elements'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import FormRegister from '../components/forms/FormRegister'
+import { useNavigation } from '@react-navigation/native'
 
-export default function RegisterScreen() {
-
+export default function SettingsScreen() {
+    // const navigation = useNavigation()
     return (
 
         <KeyboardAwareScrollView style={{ flex: 1 }} >
             <View style={styles.screenContainer}>
-                <View style={styles.topBg} >
-                    <Text style={styles.title}>¡Hola! somos </Text>
-                    <Text style={{
-                        ...styles.title,
-                        ...styles.title_wally
-                    }} >Wally</Text>
-                </View>
-                <TitleComponent text="Registrarse con correo electrónico" />
-                <FormRegister />
+                {/* <View style={styles.topBg} > */}
+                    {/* <Text style={styles.title}>Configuración</Text> */}
+                    <Image
+                        source={require("../assets/Images/Configuración-13-imagen.png")}
+                        style={{}}
+                    />
+                {/* </View> */}
+                {/* <TitleComponent text="Registrarse con correo electrónico" />
+                <FormRegister /> */}
             </View>
         </KeyboardAwareScrollView>
     )
